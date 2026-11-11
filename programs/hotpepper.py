@@ -25,15 +25,14 @@ datum = response.json()
 
 
 stores = datum['results']['shop']
-'''
+
 store_info=[]
 for store in stores:
-    print(store)
+    print(store,'\n')
     store_info.append(store)
 
 store_df = pd.DataFrame(stores)
-print(store_df)
+
 with codecs.open("hotpepper.csv", "w", "ms932", "ignore") as f: 
     #header=Trueで、見出しを書き出す
     store_df.to_csv(f, index=False, encoding="ms932", mode='w', header=True)
-'''
